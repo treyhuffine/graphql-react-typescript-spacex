@@ -1,0 +1,21 @@
+.LaunchList {
+  height: 100vh;
+  overflow: hidden auto;
+  background-color: #ececec;
+  width: 300px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.LaunchList__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.LaunchList__item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #919191;
+  cursor: pointer;
+}
