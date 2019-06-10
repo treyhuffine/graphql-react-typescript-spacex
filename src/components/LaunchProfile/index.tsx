@@ -1,15 +1,18 @@
 import * as React from 'react';
-import { useLaunchProfileQuery } from '../../generated/graphql';
 import LaunchProfile from './LaunchProfile';
+import { useQuery } from 'react-apollo-hooks';
+import { LaunchProfileQuery, LaunchProfileQueryVariables } from './__generated__/LaunchProfileQuery';
+import { QUERY_LAUNCH_PROFILE } from './query';
 
 interface OwnProps {
   id: number;
 }
 
 const LaunchProfileContainer = ({ id }: OwnProps) => {
-  const { data, error, loading, refetch } = useLaunchProfileQuery({
+  const { data, error, loading, refetch } = useQuery<LaunchProfileQuery, LaunchProfileQueryVariables>(QUERY_LAUNCH_PROFILE, {
     variables: { id: String(id) },
   });
+
   React.useEffect(() => {
     refetch();
   }, [id]);
@@ -26,7 +29,7 @@ const LaunchProfileContainer = ({ id }: OwnProps) => {
     return <div>Select a flight from the panel</div>;
   }
 
-  return <LaunchProfile data={data} />;
+  return <LaunchProfile launch={data.launch} />;
 };
 
 export default LaunchProfileContainer;

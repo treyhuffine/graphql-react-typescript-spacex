@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { useLaunchListQuery } from '../../generated/graphql';
 import LaunchList, { OwnProps } from './LaunchList';
+import { useQuery } from 'react-apollo-hooks';
+import { QUERY_LAUNCH_LIST } from './query'
+import { LaunchListQuery } from './__generated__/LaunchListQuery';
 
 const LaunchListContainer = (props: OwnProps) => {
-  const { data, error, loading } = useLaunchListQuery();
+  const { data, error, loading } = useQuery<LaunchListQuery>(QUERY_LAUNCH_LIST);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -13,7 +15,7 @@ const LaunchListContainer = (props: OwnProps) => {
     return <div>ERROR</div>;
   }
 
-  return <LaunchList data={data} {...props} />;
+  return <LaunchList launches={data.launches} {...props} />;
 };
 
 export default LaunchListContainer;

@@ -1,37 +1,37 @@
 import * as React from 'react';
-import { LaunchProfileQuery } from '../../generated/graphql';
 import './styles.css';
+import { LaunchProfileQuery } from './__generated__/LaunchProfileQuery';
 
 interface Props {
-  data: LaunchProfileQuery;
+  launch: LaunchProfileQuery['launch'];
 }
 
 const className = 'LaunchProfile';
 
-const LaunchProfile: React.FC<Props> = ({ data }) => {
-  if (!data.launch) {
+const LaunchProfile: React.FC<Props> = ({ launch }) => {
+  if (!launch) {
     return <div>No launch available</div>;
   }
 
   return (
     <div className={className}>
       <div className={`${className}__status`}>
-        <span>Flight {data.launch.flight_number}: </span>
-        {data.launch.launch_success ? (
+        <span>Flight {launch.flight_number}: </span>
+        {launch.launch_success ? (
           <span className={`${className}__success`}>Success</span>
         ) : (
           <span className={`${className}__failed`}>Failed</span>
         )}
       </div>
       <h1 className={`${className}__title`}>
-        {data.launch.mission_name}
-        {data.launch.rocket &&
-          ` (${data.launch.rocket.rocket_name} | ${data.launch.rocket.rocket_type})`}
+        {launch.mission_name}
+        {launch.rocket &&
+          ` (${launch.rocket.rocket_name} | ${launch.rocket.rocket_type})`}
       </h1>
-      <p className={`${className}__description`}>{data.launch.details}</p>
-      {!!data.launch.links && !!data.launch.links.flickr_images && (
+      <p className={`${className}__description`}>{launch.details}</p>
+      {!!launch.links && !!launch.links.flickr_images && (
         <div className={`${className}__image-list`}>
-          {data.launch.links.flickr_images.map(image =>
+          {launch.links.flickr_images.map(image =>
             image ? <img src={image} className={`${className}__image`} key={image} /> : null,
           )}
         </div>
