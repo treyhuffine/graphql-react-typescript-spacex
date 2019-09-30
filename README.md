@@ -13,3 +13,5 @@ Follow the tutorial step-by-step on the [LogRocket blog](https://blog.logrocket.
 - Create React App with the TypeScript setting to bootstrap the App
 - Implement React Apollo using React Hooks to make GraphQL queries
 - Automatically generate TypeScript types for our queries and components based off the GraphQL schema
+
+_Note:_ Upgrading graphql-codegen makes a big change to the way typescript files are generated. If you run into an error regarding ordering of imports in ./generated/graphql.tsx, the command `npm run codegen` should fix it.
