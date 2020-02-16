@@ -1,6 +1,5 @@
-# Find coding tutorials
-
-### [React](https://gitconnected.com/learn/react) | [TypeScript](https://gitconnected.com/learn/typescript) | [GraphQL](https://gitconnected.com/learn/graphql)
+### [Software Engineer Resume Builder](https://gitconnected.com/resume-builder)
+Effortlessly generate a developer resume. [Learn More →](https://gitconnected.com/resume-builder)
 
 # React App with GraphQL and TypeScript
 
@@ -13,3 +12,7 @@ Follow the step-by-step [tutorial](https://levelup.gitconnected.com/build-a-grap
 - Create React App with the TypeScript setting to bootstrap the App
 - Implement React Apollo using React Hooks to make GraphQL queries
 - Automatically generate TypeScript types for our queries and components based off the GraphQL schema
+
+## Find coding tutorials
+
+### [React](https://gitconnected.com/learn/react) | [TypeScript](https://gitconnected.com/learn/typescript) | [GraphQL](https://gitconnected.com/learn/graphql)
