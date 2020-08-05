@@ -1,3 +1,6 @@
+### [Skilled.dev - Coding Interview Course](https://skilled.dev)
+Master the programming interview [Learn More →](https://skilled.dev)
+
 ### [Software Engineer Resume Builder](https://gitconnected.com/resume-builder)
 Effortlessly generate a developer resume. [Learn More →](https://gitconnected.com/resume-builder)
 
