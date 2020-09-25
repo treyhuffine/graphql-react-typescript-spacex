@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { LaunchListQuery } from '../../generated/graphql';
 import './styles.css';
+import { LaunchListQuery } from './__generated__/LaunchListQuery';
 
 export interface OwnProps {
   handleIdChange: (newId: number) => void;
 }
 
 interface Props extends OwnProps {
-  data: LaunchListQuery;
+  launches: LaunchListQuery['launches'];
 }
 
 const className = 'LaunchList';
 
-const LaunchList: React.FC<Props> = ({ data, handleIdChange }) => (
+const LaunchList: React.FC<Props> = ({ launches, handleIdChange }) => (
   <div className={className}>
     <h3>Launches</h3>
     <ol className={`${className}__list`}>
-      {!!data.launches &&
-        data.launches.map(
+      {!!launches &&
+        launches.map(
           (launch, i) =>
             !!launch && (
               <li
