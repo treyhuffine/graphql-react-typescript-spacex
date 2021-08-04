@@ -88,6 +88,7 @@ export type Engines = {
   number?: Maybe<Scalars["Int"]>;
   type?: Maybe<Scalars["String"]>;
   version?: Maybe<Scalars["String"]>;
+  layout?: Maybe<Scalars["String"]>;
   engine_loss_max?: Maybe<Scalars["Int"]>;
   propellant_1?: Maybe<Scalars["String"]>;
   propellant_2?: Maybe<Scalars["String"]>;
@@ -567,6 +568,7 @@ export type Rocket = {
   country?: Maybe<Scalars["String"]>;
   company?: Maybe<Scalars["String"]>;
   height?: Maybe<Dimension>;
+  diameter?: Maybe<Dimension>;
   mass?: Maybe<Mass>;
   payload_weights?: Maybe<Array<Maybe<RocketPayloadWeight>>>;
   first_stage?: Maybe<RocketFirstStage>;
