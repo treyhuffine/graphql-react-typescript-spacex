@@ -6,7 +6,7 @@ interface OwnProps {
   id: number;
 }
 
-const LaunchProfileContainer = ({ id }: OwnProps) => {
+const LaunchProfileContainer: React.FC<OwnProps> = ({ id }) => {
   const { data, error, loading, refetch } = useLaunchProfileQuery({
     variables: { id: String(id) },
   });
