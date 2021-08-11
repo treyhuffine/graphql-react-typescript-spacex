@@ -31,8 +31,15 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
       <p className={`${className}__description`}>{data.launch.details}</p>
       {!!data.launch.links && !!data.launch.links.flickr_images && (
         <div className={`${className}__image-list`}>
-          {data.launch.links.flickr_images.map(image =>
-            image ? <img src={image} className={`${className}__image`} key={image} /> : null,
+          {data.launch.links.flickr_images.map((image, i) =>
+            image ? (
+              <img
+                src={image}
+                className={`${className}__image`}
+                key={image}
+                alt={`${data.launch?.mission_name} ${i}`}
+              />
+            ) : null,
           )}
         </div>
       )}
